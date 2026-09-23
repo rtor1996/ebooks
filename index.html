@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NITT Central Library | E-Book Discovery Portal</title>
+<meta name="description" content="Search the Central Library e-book collection of National Institute of Technology, Tiruchirappalli.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header>
+  <div class="top">
+    <div class="brand">
+      <div class="logo">NITT</div>
+      <div><b>NATIONAL INSTITUTE OF TECHNOLOGY</b><span>TIRUCHIRAPPALLI</span></div>
+    </div>
+    <div class="library">CENTRAL LIBRARY</div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="eyebrow">CENTRAL LIBRARY</div>
+  <h1>E-Book Discovery Portal</h1>
+  <p>Search, discover and access the electronic book collection of NIT Trichy.</p>
+
+  <div class="search">
+    <select id="field" aria-label="Search field">
+      <option value="all">All Fields</option>
+      <option value="title">Title</option>
+      <option value="author">Author</option>
+      <option value="publisher">Publisher</option>
+      <option value="isbn">ISBN</option>
+      <option value="doi">DOI / URL</option>
+    </select>
+    <input id="q" type="search" placeholder="Search e-books by title, author, ISBN, publisher..." autocomplete="off">
+    <button id="searchBtn">Search</button>
+  </div>
+  <div class="quick">
+    <button data-field="all">All</button><button data-field="title">Title</button>
+    <button data-field="author">Author</button><button data-field="publisher">Publisher</button>
+    <button data-field="isbn">ISBN</button><button data-field="doi">DOI</button>
+  </div>
+</section>
+
+<section class="stats">
+  <div><strong id="statBooks">—</strong><span>E-Books</span></div>
+  <div><strong id="statAuthors">—</strong><span>Authors</span></div>
+  <div><strong id="statPublishers">—</strong><span>Publishers</span></div>
+  <div><strong id="statYears">—</strong><span>Publication Years</span></div>
+</section>
+
+<section class="layout">
+  <aside class="filters">
+    <div class="filter-title"><h3>Refine Search</h3><button id="clearBtn">Clear</button></div>
+    <label>Publication Year</label>
+    <select id="yearFilter"><option value="">All years</option></select>
+    <label>Publisher</label>
+    <select id="publisherFilter"><option value="">All publishers</option></select>
+    <label>Results per page</label>
+    <select id="perPage"><option>20</option><option>40</option><option>60</option></select>
+  </aside>
+
+  <section class="results">
+    <div class="resultbar">
+      <div><h2 id="resultTitle">All E-Books</h2><p id="count">Loading collection…</p></div>
+      <button id="gridBtn" class="viewbtn">▦</button>
+    </div>
+    <div id="results"></div>
+    <nav id="pagination" class="pagination"></nav>
+  </section>
+</section>
+</main>
+
+<footer>
+  <div><b>NITT Central Library</b><br>National Institute of Technology, Tiruchirappalli – 620 015</div>
+  <div>E-Book Discovery Portal</div>
+</footer>
+
+<div id="modal" class="modal" aria-hidden="true">
+  <div class="modalbox">
+    <button class="close" id="closeModal">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>
